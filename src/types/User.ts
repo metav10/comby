@@ -1,7 +1,9 @@
 export type UserType = 'STUDENT' | 'TEACHER';
 export type User = {
   id: string;
-  name: string;
+  firstName: string;
+  lastName: string;
+  username: string;
   password: string;
   userType: UserType;
 };
