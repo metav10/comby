@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@comby-components": ["./src/components/index.ts"],
-      "@comby-types": ["./src/types/index.ts"],
-      "@comby-store/*": ["./src/store/*"]
+      "@commbe-components": ["./src/components/index.ts"],
+      "@commbe-types": ["./src/types/index.ts"],
+      "@commbe-store/*": ["./src/store/*"]
     }
   }
 }

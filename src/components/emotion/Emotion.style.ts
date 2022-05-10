@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components/macro';
 export const Labels = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 4px;
-  font-weight: 400;
+  margin-top: 8px;
+  font-weight: 300;
   font-size: 16px;
   line-height: 19px;
   color: black;
@@ -18,13 +18,22 @@ const selectedEmotion = css`
   }
 `;
 
-export const Emotion = styled.div<{ selected?: boolean }>`
+export const Emotion = styled.div<{ selected?: boolean; noBorder?: boolean; noCursor?: boolean }>`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 12px;
-  border: 1px solid black;
-  cursor: pointer;
+  margin: 8px;
+  border: ${({ noBorder }) => (noBorder ? 'none' : '1px solid #dfdfdf')};
+  cursor: ${({ noCursor }) => (noCursor ? 'auto' : 'pointer')};
+  max-width: 90px;
+  min-width: 90px;
+  height: 120px;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.3s;
   ${({ selected }) => selected && selectedEmotion}
 `;
 

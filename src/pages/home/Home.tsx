@@ -1,44 +1,36 @@
-import { Emotion } from '../../components';
-import { Emotions, EmotionsType, StatusType } from '../../types';
-import { ReactNode, useState } from 'react';
+import { useRecoilValue } from 'recoil';
+import { useNavigate } from 'react-router-dom';
+import { selectedStatusStore } from '../../store';
+import { StatusList } from './statusList/StatusList';
+import * as S from './Home.style';
 
 export const Home = () => {
-  const [selectedStatus, setSelectedStatus] = useState<EmotionsType | null>();
+  const navigate = useNavigate();
+  const selectedStatus = useRecoilValue(selectedStatusStore);
 
-  const status: StatusType = 'EMOTIONS';
-  let data: ReactNode;
-
-  switch (status) {
-    case 'EMOTIONS':
-      data = (Object.keys(Emotions) as Array<EmotionsType>).map((emotion, eIndex) => (
-        <Emotion
-          key={eIndex}
-          onClick={() => setSelectedStatus(selectedStatus === emotion ? null : emotion)}
-          emotion={emotion}
-          selected={selectedStatus === emotion}
-        />
-      ));
-      break;
-    default:
-      data = <></>;
-  }
+  const name = 'Dani';
+  const status = 'EMOTIONS';
 
   const handleClick = () => {
     if (!selectedStatus) return;
-    console.log(selectedStatus);
+    navigate('thankYou');
   };
 
   return (
-    <>
-      <span>Hi, Dani</span>
-      <div>
-        <span>How are you feeling today?</span>
-        <span>איך אתם מרגישים היום?</span>
-      </div>
-      <div>{data}</div>
-      <button onClick={handleClick} disabled={!selectedStatus}>
+    <S.Home>
+      <S.Name>Hi, {name}</S.Name>
+      <S.Feeling>
+        <S.FeelingEng>
+          How are you
+          <br />
+          feeling today?
+        </S.FeelingEng>
+        <S.FeelingHe>איך אתם מרגישים היום?</S.FeelingHe>
+      </S.Feeling>
+      <StatusList status={status} />
+      <S.SubmitButton onClick={handleClick} disabled={!selectedStatus}>
         Submit / שליחה
-      </button>
-    </>
+      </S.SubmitButton>
+    </S.Home>
   );
 };
