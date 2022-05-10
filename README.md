@@ -3,6 +3,13 @@
 1. Run `npm install`
 2. Run `npm start`
 
+## Todo
+
+- making submit button appears all the time (no need to scroll)
+- login
+- colors
+- import from @commbe
+
 ## Libraries used in codebase
 
 - [typescript](https://create-react-app.dev/docs/adding-typescript/)
