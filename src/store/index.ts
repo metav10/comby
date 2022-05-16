@@ -8,16 +8,10 @@ export const selectedStatusStore = atom<StatusType | null>({
 
 export const selectedStatusNameStore = atom<StatusNameType | null>({
   key: 'SelectedStatusName',
-  default: 'EMOTIONS',
+  default: null,
 });
 
 export const userStore = atom<User | null>({
   key: 'user',
-  default: {
-    id: '12121',
-    firstName: 'Dani',
-    lastName: 'Gold',
-    username: 'danigold',
-    userType: 'TEACHER',
-  },
+  default: null,
 });

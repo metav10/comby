@@ -2,16 +2,29 @@ import styled from 'styled-components/macro';
 
 export const Login = styled.div`
   height: 100%;
-  background: #b0b0b0;
+  background: #ffd3be;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
+export const Images = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+`;
+
 export const Logo = styled.img`
   width: 250px;
   margin-top: 150px;
+`;
+
+export const Bg = styled.img`
+  width: 60vh;
+  margin-top: -100px;
 `;
 
 export const LoginForm = styled.form`
