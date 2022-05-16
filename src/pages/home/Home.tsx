@@ -1,16 +1,12 @@
-import { User } from '../../types';
+import { useRecoilValue } from 'recoil';
 import { Student } from '../student/Student';
 import { Teacher } from '../teacher/Teacher';
 import * as S from './Home.style';
+import { userStore } from '../../store/';
 
 export const Home = () => {
-  const user: User = {
-    id: '12121',
-    firstName: 'Dani',
-    lastName: 'Gold',
-    username: 'danigold',
-    userType: 'TEACHER',
-  };
+  const user = useRecoilValue(userStore);
+  if (!user) return <></>;
 
   const component = () => {
     switch (user.userType) {
@@ -23,5 +19,10 @@ export const Home = () => {
     }
   };
 
-  return <S.Home>{component()}</S.Home>;
+  return (
+    <S.Home>
+      <S.Logout to="/logout">Logout / התנתקות</S.Logout>
+      {component()}
+    </S.Home>
+  );
 };

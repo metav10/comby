@@ -13,6 +13,7 @@ export const Button = styled.button<{ isWhite?: boolean }>`
   border: none;
   border-radius: 500px;
   transition: all 0.3s;
+  width: 280px;
 
   &:disabled {
     opacity: 50%;

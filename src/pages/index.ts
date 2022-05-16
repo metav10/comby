@@ -1,5 +1,4 @@
-import { Home } from './home/Home';
-import { Login } from './login/Login';
-import { ThankYou } from './thankYou/ThankYou';
-
-export { Home, Login, ThankYou };
+export { Home } from './home/Home';
+export { Login } from './login/Login';
+export { Logout } from './logout/Logout';
+export { ThankYou } from './thankYou/ThankYou';

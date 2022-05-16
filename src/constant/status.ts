@@ -1,8 +1,8 @@
-import { Status } from '../../types';
+import { Status } from '../types';
 
 export const STATUS: Array<Status> = [
   {
-    kidUserId: '11111',
+    kidUserId: '111',
     date: '1652679475',
     status: 'amazing',
   },

@@ -1,10 +1,9 @@
 import { Emotion } from '../../../components';
-import { Status, StatusType, Emotions, EmotionsType } from '../../../types';
-import { STUDENTS } from '../students';
+import { Status, StatusType, Emotions, EmotionsType, User } from '../../../types';
 import * as S from './StudentsFeelings.style';
 
-export const StudentsFeelings = ({ status }: { status: Array<Status> }) => {
-  const getStudentData = (studentId: string) => STUDENTS.find((s) => s.id === studentId);
+export const StudentsFeelings = ({ status, students }: { status: Array<Status>; students: Array<User> }) => {
+  const getStudentData = (studentId: string) => students.find((s) => s.id === studentId);
 
   const isEmotionType = (emotion: StatusType): emotion is EmotionsType => {
     return Object.keys(Emotions).includes(emotion);
@@ -17,7 +16,7 @@ export const StudentsFeelings = ({ status }: { status: Array<Status> }) => {
         if (!studentData) return <>couldn't find student data</>;
 
         const emotion = isEmotionType(s.status) ? s.status : undefined;
-        
+
         return (
           <S.Student key={sIndex}>
             <S.StudentName>

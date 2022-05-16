@@ -4,7 +4,7 @@
     "paths": {
       "@commbe-components": ["./src/components/index.ts"],
       "@commbe-types": ["./src/types/index.ts"],
-      "@commbe-store/*": ["./src/store/*"]
+      "@commbe-store": ["./src/store/*"]
     }
   }
 }

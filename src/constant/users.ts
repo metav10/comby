@@ -1,53 +1,60 @@
-import { User } from '../../types';
+import { User } from '../types';
 
-export const STUDENTS: Array<User> = [
+export const USERS: Array<User> = [
   {
-    id: '11111',
+    id: '111',
     firstName: 'Metav',
     lastName: 'Sharoni',
     userType: 'STUDENT',
-    username: 'metavsharoni',
+    username: 'metav',
   },
   {
     id: '22222',
     firstName: 'Tom',
     lastName: 'Data',
     userType: 'STUDENT',
-    username: 'tomdata',
+    username: 'kid1',
   },
   {
     id: '3333',
     firstName: 'Yaron',
     lastName: 'Bon',
     userType: 'STUDENT',
-    username: 'yaronbon',
+    username: 'kid2',
   },
   {
     id: '44444',
     firstName: 'Noam',
     lastName: 'Shocham',
     userType: 'STUDENT',
-    username: 'noamshocham',
+    username: 'kid3',
   },
   {
     id: '5555',
     firstName: 'Lidor',
     lastName: 'Dror',
     userType: 'STUDENT',
-    username: 'lidordror',
+    username: 'kid4',
   },
   {
     id: '66666',
     firstName: 'Alon',
     lastName: 'Balon',
     userType: 'STUDENT',
-    username: 'alonbalon',
+    username: 'kid5',
   },
   {
     id: '777777',
     firstName: 'Matan',
     lastName: 'Katan',
     userType: 'STUDENT',
-    username: 'matankatan',
+    username: 'kid6',
+  },
+  {
+    id: '12121',
+    firstName: 'Dani',
+    lastName: 'Gold',
+    username: 'teacher',
+    userType: 'TEACHER',
   },
 ];

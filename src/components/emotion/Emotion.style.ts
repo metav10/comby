@@ -18,7 +18,15 @@ const selectedEmotion = css`
   }
 `;
 
-export const Emotion = styled.div<{ selected?: boolean; noBorder?: boolean; noCursor?: boolean }>`
+const noBgEmotion = css`
+  background: transparent;
+
+  ${Labels} {
+    color: white;
+  }
+`;
+
+export const Emotion = styled.div<{ selected?: boolean; noBorder?: boolean; noCursor?: boolean; noBg?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +43,7 @@ export const Emotion = styled.div<{ selected?: boolean; noBorder?: boolean; noCu
   background: white;
   transition: all 0.3s;
   ${({ selected }) => selected && selectedEmotion}
+  ${({ noBg }) => noBg && noBgEmotion}
 `;
 
 export const EngLabel = styled.span`

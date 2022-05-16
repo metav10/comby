@@ -8,7 +8,7 @@ export const Button = ({
   isWhite,
 }: PropsWithChildren<{
   onClick: () => void;
-  disabled: boolean;
+  disabled?: boolean;
   isWhite?: boolean;
 }>) => {
   return (

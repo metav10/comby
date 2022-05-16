@@ -8,14 +8,16 @@ export const Emotion = ({
   selected,
   noBorder,
   noCursor,
+  noBg,
 }: {
   emotion: EmotionsType;
   onClick?: () => void;
   selected?: boolean;
   noBorder?: boolean;
   noCursor?: boolean;
+  noBg?: boolean;
 }) => (
-  <S.Emotion selected={selected} noCursor={noCursor} noBorder={noBorder} onClick={onClick}>
+  <S.Emotion selected={selected} noBg={noBg} noCursor={noCursor} noBorder={noBorder} onClick={onClick}>
     <Emojis emotion={emotion} />
     <S.Labels>
       <S.EngLabel>{emotion}</S.EngLabel>

@@ -4,6 +4,6 @@ export type Kita = {
   kitaId: string;
   kitaName: string;
   kidsUserIds: Array<string>;
-  managementUserId: Array<string>;
+  managementUserIds: Array<string>;
   status: StatusNameType;
 };
