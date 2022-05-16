@@ -1,5 +1,4 @@
 import styled from 'styled-components/macro';
-import { Button } from '../../components';
 
 export const Name = styled.span`
   font-weight: 300;
@@ -29,7 +28,7 @@ export const FeelingHe = styled.span`
   direction: rtl;
 `;
 
-export const SubmitButton = styled(Button)`
+export const SubmitButtonContainer = styled.div`
   position: fixed;
-  bottom: 20px;
+  bottom: 40px;
 `;

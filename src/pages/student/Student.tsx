@@ -3,6 +3,8 @@ import { useRecoilValue } from 'recoil';
 import { selectedStatusStore } from '../../store';
 import { User } from '../../types';
 import { StatusList } from './statusList/StatusList';
+import { Button } from '../../components';
+
 import * as S from './Student.style';
 
 export const Student = ({ user }: { user: User }) => {
@@ -29,9 +31,11 @@ export const Student = ({ user }: { user: User }) => {
         <S.FeelingHe>איך אתם מרגישים היום?</S.FeelingHe>
       </S.Feeling>
       <StatusList statusName={status} />
-      <S.SubmitButton onClick={handleClick} disabled={!selectedStatus}>
-        Submit / שליחה
-      </S.SubmitButton>
+      <S.SubmitButtonContainer>
+        <Button onClick={handleClick} disabled={!selectedStatus}>
+          Submit / שליחה
+        </Button>
+      </S.SubmitButtonContainer>
     </>
   );
 };
