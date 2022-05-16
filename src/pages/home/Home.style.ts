@@ -5,5 +5,5 @@ export const Home = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  margin: 40px;
 `;

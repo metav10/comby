@@ -16,4 +16,5 @@ export const Feeling = styled.span`
   font-size: 36px;
   line-height: 43px;
   margin-bottom: 8px;
+  max-width: 400px;
 `;

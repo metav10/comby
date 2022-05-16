@@ -11,7 +11,6 @@ export const Teacher = ({ user }: { user: User }) => {
       <S.Name>Hi, {firstName}</S.Name>
       <S.Feeling>
         This is how your class
-        <br />
         are feeling today
       </S.Feeling>
       <StudentsFeelings status={STATUS} />

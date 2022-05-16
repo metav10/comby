@@ -9,7 +9,7 @@ export const Home = () => {
     firstName: 'Dani',
     lastName: 'Gold',
     username: 'danigold',
-    userType: 'STUDENT',
+    userType: 'TEACHER',
   };
 
   const component = () => {
