@@ -1,6 +1,6 @@
-import { Class } from './Class';
+import { Kita } from './Class';
 import { Emotions, EmotionsType, Colors, ColorsType, StatusNameType, StatusType, Status } from './Status';
 import { User, UserType } from './User';
 
 export { Emotions, Colors };
-export type { Class, EmotionsType, ColorsType, StatusNameType, StatusType, Status, User, UserType };
+export type { Kita, EmotionsType, ColorsType, StatusNameType, StatusType, Status, User, UserType };

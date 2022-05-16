@@ -10,7 +10,7 @@ export const Emotion = ({
   noCursor,
 }: {
   emotion: EmotionsType;
-  onClick: () => void;
+  onClick?: () => void;
   selected?: boolean;
   noBorder?: boolean;
   noCursor?: boolean;
