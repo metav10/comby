@@ -5,8 +5,8 @@
 
 ## Todo
 
-- making submit button appears all the time (no need to scroll)
-- login
+- login each user type
+-
 - colors
 - import from @commbe
 
