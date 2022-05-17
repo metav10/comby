@@ -1,25 +1,40 @@
 import { useRecoilValue } from 'recoil';
 import { useNavigate } from 'react-router-dom';
-import { selectedStatusNameStore, selectedStatusStore } from '../../store';
-import { EmotionsType, ColorsType } from '../../types';
-import { Emotion } from '../../components';
+import { statusNameTypeStore, selectedStatusStore } from '../../store';
+import { EmotionsType, ColorsType, LightColors } from '../../types';
+import { Color, Emotion } from '../../components';
 import * as S from './ThankYou.style';
 
 export const ThankYou = () => {
   const navigate = useNavigate();
   const selectedStatus = useRecoilValue(selectedStatusStore);
-  const selectedStatusName = useRecoilValue(selectedStatusNameStore);
+  const statusNameType = useRecoilValue(statusNameTypeStore);
 
   if (!selectedStatus) {
     navigate('/');
     return <></>;
   }
 
+  const isColors = statusNameType === 'COLORS';
+  const isEmotions = statusNameType === 'EMOTIONS';
+
+  const statusEmotion = selectedStatus as EmotionsType;
+  const stautsColors = selectedStatus as ColorsType;
+
   return (
-    <S.ThankYou background={selectedStatusName === 'COLORS' ? (selectedStatus as ColorsType) : '#b0b0b0'}>
+    <S.ThankYou
+      background={isColors ? stautsColors : '#b0b0b0'}
+      isLightTextColor={isColors && LightColors.includes(stautsColors)}
+    >
+      <S.Feeling>
+        <S.FeelingEng>You are feeling</S.FeelingEng>
+        <S.FeelingHe>אתם מרגישים</S.FeelingHe>
+      </S.Feeling>
       <S.Emotion>
-        {selectedStatusName === 'EMOTIONS' && (
-          <Emotion noBg noBorder selected noCursor onClick={() => null} emotion={selectedStatus as EmotionsType} />
+        {isEmotions ? (
+          <Emotion noBg noBorder selected noCursor onClick={() => null} emotion={statusEmotion} />
+        ) : (
+          isColors && <Color noBg noBorder selected noCursor onClick={() => null} color={stautsColors} />
         )}
       </S.Emotion>
       <S.ForSharing>

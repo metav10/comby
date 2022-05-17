@@ -1,7 +1,7 @@
 import { useRecoilState } from 'recoil';
 import { selectedStatusStore } from '../../../store';
-import { Emotion } from '../../../components';
-import { Emotions, EmotionsType, StatusNameType } from '../../../types';
+import { Emotion, Color } from '../../../components';
+import { Colors, ColorsType, Emotions, EmotionsType, StatusNameType } from '../../../types';
 import * as S from './StatusList.style';
 
 export const StatusList = ({ statusName }: { statusName: StatusNameType }) => {
@@ -16,6 +16,15 @@ export const StatusList = ({ statusName }: { statusName: StatusNameType }) => {
             onClick={() => setSelectedStatus(selectedStatus === emotion ? null : emotion)}
             emotion={emotion}
             selected={selectedStatus === emotion}
+          />
+        ));
+      case 'COLORS':
+        return (Object.keys(Colors) as Array<ColorsType>).map((color, cIndex) => (
+          <Color
+            key={cIndex}
+            onClick={() => setSelectedStatus(selectedStatus === color ? null : color)}
+            color={color}
+            selected={selectedStatus === color}
           />
         ));
       default:

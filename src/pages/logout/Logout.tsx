@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { selectedStatusNameStore, selectedStatusStore, userStore } from '../../store';
+import { statusNameTypeStore, selectedStatusStore, userStore } from '../../store';
 
 export const Logout = () => {
   const navigate = useNavigate();
   const [, setUser] = useRecoilState(userStore);
-  const [, setStatusName] = useRecoilState(selectedStatusNameStore);
+  const [, setStatusNameType] = useRecoilState(statusNameTypeStore);
   const [, setSelectedStatus] = useRecoilState(selectedStatusStore);
 
   useEffect(() => {
     setUser(null);
-    setStatusName(null);
+    setStatusNameType(null);
     setSelectedStatus(null);
     navigate('/login');
-  }, [navigate, setSelectedStatus, setStatusName, setUser]);
+  }, [navigate, setSelectedStatus, setStatusNameType, setUser]);
 
   return <>Login out...</>;
 };

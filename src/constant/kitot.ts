@@ -8,4 +8,11 @@ export const KITOT: Array<Kita> = [
     managementUserIds: ['12121'],
     status: 'EMOTIONS',
   },
+  {
+    kitaId: '222222',
+    kitaName: '7th grade',
+    kidsUserIds: ['a1111', 'a22222', 'a3333', 'a44444'],
+    managementUserIds: ['a12121'],
+    status: 'COLORS',
+  },
 ];

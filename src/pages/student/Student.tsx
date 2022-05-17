@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import { selectedStatusStore } from '../../store';
+import { selectedStatusStore, statusNameTypeStore } from '../../store';
 import { User } from '../../types';
 import { StatusList } from './statusList/StatusList';
 import { Button } from '../../components';
@@ -10,9 +10,9 @@ import * as S from './Student.style';
 export const Student = ({ user }: { user: User }) => {
   const { firstName } = user;
   const selectedStatus = useRecoilValue(selectedStatusStore);
-  const navigate = useNavigate();
+  const statusNameType = useRecoilValue(statusNameTypeStore);
 
-  const status = 'EMOTIONS';
+  const navigate = useNavigate();
 
   const handleClick = () => {
     if (!selectedStatus) return;
@@ -30,7 +30,7 @@ export const Student = ({ user }: { user: User }) => {
         </S.FeelingEng>
         <S.FeelingHe>איך אתם מרגישים היום?</S.FeelingHe>
       </S.Feeling>
-      <StatusList statusName={status} />
+      {statusNameType && <StatusList statusName={statusNameType} />}
       <S.SubmitButtonContainer>
         <Button onClick={handleClick} disabled={!selectedStatus}>
           Submit / שליחה

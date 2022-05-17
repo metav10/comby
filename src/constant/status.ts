@@ -36,4 +36,25 @@ export const STATUS: Array<Status> = [
     date: '1652679475',
     status: 'shocked',
   },
+  // colors
+  {
+    kidUserId: 'a1111',
+    date: '1652679475',
+    status: 'blue',
+  },
+  {
+    kidUserId: 'a22222',
+    date: '1652679475',
+    status: 'green',
+  },
+  {
+    kidUserId: 'a3333',
+    date: '1652679475',
+    status: 'yellow',
+  },
+  {
+    kidUserId: 'a44444',
+    date: '1652679475',
+    status: 'red',
+  },
 ];

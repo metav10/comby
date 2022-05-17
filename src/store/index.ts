@@ -6,8 +6,8 @@ export const selectedStatusStore = atom<StatusType | null>({
   default: null,
 });
 
-export const selectedStatusNameStore = atom<StatusNameType | null>({
-  key: 'SelectedStatusName',
+export const statusNameTypeStore = atom<StatusNameType | null>({
+  key: 'StatusNameType',
   default: null,
 });
 

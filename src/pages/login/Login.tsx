@@ -1,6 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { useRecoilState } from 'recoil';
-import { selectedStatusNameStore, userStore } from '../../store';
+import { statusNameTypeStore, userStore } from '../../store';
 import { Input, Button } from '../../components';
 import { KITOT, USERS } from '../../constant';
 import * as S from './Login.style';
@@ -12,7 +12,7 @@ export const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [, setUser] = useRecoilState(userStore);
-  const [, setStatusName] = useRecoilState(selectedStatusNameStore);
+  const [, setStatusNameType] = useRecoilState(statusNameTypeStore);
   const navigate = useNavigate();
 
   const handleForm = (e: FormEvent<HTMLFormElement>) => {
@@ -26,7 +26,7 @@ export const Login = () => {
     const kita = KITOT.find((kita) => kita.kidsUserIds.includes(user.id) || kita.managementUserIds.includes(user.id));
     if (!kita) return;
 
-    setStatusName(kita.status);
+    setStatusNameType(kita.status);
     setUser(user);
     navigate('/');
   };
