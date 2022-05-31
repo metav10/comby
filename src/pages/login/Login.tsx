@@ -44,7 +44,7 @@ export const Login = () => {
   const addUser = () => {
     const user = username;
     if (!user) return;
-    if (user === 'teacher' || user === 'teacher1') {
+    if (user === 'teacher' || user === 'teacher1' || user === 'teacher2') {
       getRealUserData();
       return;
     }

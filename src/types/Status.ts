@@ -15,12 +15,20 @@ export enum Emotions {
 export type EmotionsType = keyof typeof Emotions;
 export enum Colors {
   'red' = 'אדום',
-  'green' = 'ירוק',
-  'yellow' = 'צהוב',
+  'purple' = 'סגול',
   'blue' = 'כחול',
+  'brown' = 'חום',
+  'white' = 'לבן',
+  'orange' = 'כתום',
+  'green' = 'ירוק',
+  'pink' = 'ורוד',
+  'yellow' = 'צהוב',
+  'black' = 'שחור',
+  'gold' = 'זהב',
+  'silver' = 'כסף',
 }
 export type ColorsType = keyof typeof Colors;
-export const LightColors: Array<ColorsType> = ['yellow'];
+export const LightColors: Array<ColorsType> = ['yellow', 'gold', 'white', 'silver', 'pink'];
 
 export type StatusType = EmotionsType | ColorsType;
 export type StatusNameType = 'EMOTIONS' | 'COLORS';

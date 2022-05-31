@@ -21,6 +21,7 @@ export const Color = ({
     noBg={noBg}
     noCursor={noCursor}
     noBorder={noBorder}
+    colorBorder={color === 'white'}
     onClick={onClick}
     bg={color}
     isLightColor={LightColors.includes(color)}

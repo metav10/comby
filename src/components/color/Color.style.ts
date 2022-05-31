@@ -44,7 +44,6 @@ const lightColor = css`
   }
 `;
 
-
 export const Color = styled.div<{
   bg?: ColorsType;
   selected?: boolean;
@@ -52,6 +51,7 @@ export const Color = styled.div<{
   noCursor?: boolean;
   noBg?: boolean;
   isLightColor?: boolean;
+  colorBorder?: boolean;
 }>`
   display: flex;
   flex-direction: column;
@@ -71,6 +71,10 @@ export const Color = styled.div<{
   ${({ noBg }) => noBg && noBgColor};
   ${({ selected }) => selected && selectedColor};
   ${({ isLightColor }) => isLightColor && lightColor};
+
+  ${ColoredBox} {
+    border: ${({ colorBorder, selected }) => (colorBorder && !selected ? '1px solid #dfdfdf' : 'none')};
+  }
 `;
 
 export const EngLabel = styled.span`
