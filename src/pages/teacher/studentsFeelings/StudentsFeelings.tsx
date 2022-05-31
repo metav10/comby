@@ -17,9 +17,10 @@ export const StudentsFeelings = ({ status, students }: { status: Array<Status>; 
         return (
           <S.Student key={sIndex}>
             <S.StudentName>
-              {studentData.firstName}
+              {/* {studentData.firstName}
               <br />
-              {studentData.lastName}
+              {studentData.lastName} */}
+              {studentData.username}
             </S.StudentName>
             {emotion && <Emotion emotion={emotion} noBorder noCursor />}
             {color && <Color color={color} noBorder noCursor />}

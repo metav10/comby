@@ -18,26 +18,33 @@ export const ThankYou = () => {
   const isColors = statusNameType === 'COLORS';
   const isEmotions = statusNameType === 'EMOTIONS';
 
-  const statusEmotion = selectedStatus as EmotionsType;
-  const stautsColors = selectedStatus as ColorsType;
+  const statusEmotions = selectedStatus as Array<EmotionsType>;
+  const statusColors = selectedStatus as Array<ColorsType>;
 
   return (
     <S.ThankYou
-      background={isColors ? stautsColors : '#b0b0b0'}
-      isLightTextColor={isColors && LightColors.includes(stautsColors)}
+      background={isColors ? `linear-gradient(
+        to right,
+        ${statusColors[0]} 50%,
+        ${statusColors[1]} 50%
+        );` : '#ffa77a'}
+      isLightTextColor={isColors && LightColors.includes(statusColors[0])}
     >
-      <S.Feeling>
+      <S.Feeling isColors={isColors}>
         <S.FeelingEng>You are feeling</S.FeelingEng>
         <S.FeelingHe>אתם מרגישים</S.FeelingHe>
       </S.Feeling>
       <S.Emotion>
-        {isEmotions ? (
-          <Emotion noBg noBorder selected noCursor onClick={() => null} emotion={statusEmotion} />
-        ) : (
-          isColors && <Color noBg noBorder selected noCursor onClick={() => null} color={stautsColors} />
-        )}
+        {isEmotions
+          ? statusEmotions.map((emotion, eIndex) => (
+              <Emotion key={eIndex} noBg noBorder selected noCursor onClick={() => null} emotion={emotion} />
+            ))
+          : isColors &&
+            statusColors.map((color, cIndex) => (
+              <Color key={cIndex} noBg noBorder selected noCursor onClick={() => null} color={color} />
+            ))}
       </S.Emotion>
-      <S.ForSharing>
+      <S.ForSharing isColors={isColors}>
         <S.ForSharingEng>Thank you for sharing</S.ForSharingEng>
         <S.ForSharingHe>תודה ששיתפתם</S.ForSharingHe>
       </S.ForSharing>

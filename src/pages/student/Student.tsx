@@ -8,20 +8,21 @@ import { Button } from '../../components';
 import * as S from './Student.style';
 
 export const Student = ({ user }: { user: User }) => {
-  const { firstName } = user;
+  const { firstName, username } = user;
   const selectedStatus = useRecoilValue(selectedStatusStore);
   const statusNameType = useRecoilValue(statusNameTypeStore);
 
   const navigate = useNavigate();
 
   const handleClick = () => {
-    if (!selectedStatus) return;
+    if (!selectedStatus.length) return;
     navigate('thankYou');
   };
 
   return (
     <>
-      <S.Name>Hi, {firstName}</S.Name>
+      {/* <S.Name>Hi, {firstName}</S.Name> */}
+      <S.Name>Hi, {username}</S.Name>
       <S.Feeling>
         <S.FeelingEng>
           How are you
@@ -32,7 +33,7 @@ export const Student = ({ user }: { user: User }) => {
       </S.Feeling>
       {statusNameType && <StatusList statusName={statusNameType} />}
       <S.SubmitButtonContainer>
-        <Button onClick={handleClick} disabled={!selectedStatus}>
+        <Button onClick={handleClick} disabled={!selectedStatus.length}>
           Submit / שליחה
         </Button>
       </S.SubmitButtonContainer>

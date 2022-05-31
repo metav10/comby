@@ -12,7 +12,7 @@ export const Logout = () => {
   useEffect(() => {
     setUser(null);
     setStatusNameType(null);
-    setSelectedStatus(null);
+    setSelectedStatus([]);
     navigate('/login');
   }, [navigate, setSelectedStatus, setStatusNameType, setUser]);
 

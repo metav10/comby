@@ -1,9 +1,9 @@
 import { atom } from 'recoil';
 import { StatusType, StatusNameType, User } from '../types';
 
-export const selectedStatusStore = atom<StatusType | null>({
+export const selectedStatusStore = atom<Array<StatusType>>({
   key: 'SelectedStatus',
-  default: null,
+  default: [],
 });
 
 export const statusNameTypeStore = atom<StatusNameType | null>({

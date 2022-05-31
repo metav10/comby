@@ -6,8 +6,8 @@ export const Button = styled.button<{ isWhite?: boolean }>`
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-  color: ${({ isWhite }) => (isWhite ? 'black' : 'white')};
-  background: ${({ isWhite }) => (isWhite ? 'white' : 'black')};
+  color: ${({ isWhite }) => (isWhite ? '#ffa77a' : 'white')};
+  background: ${({ isWhite }) => (isWhite ? 'white' : '#ffa77a')};
   cursor: pointer;
   padding: 20px 80px;
   border: none;

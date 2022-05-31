@@ -20,7 +20,17 @@ export const Login = () => {
     addUser();
   };
 
-  const addUser = () => {
+  // const addUser = () => {
+  //   const user = USERS.find((u) => u.username === username);
+  //   if (!user) return;
+  //   const kita = KITOT.find((kita) => kita.kidsUserIds.includes(user.id) || kita.managementUserIds.includes(user.id));
+  //   if (!kita) return;
+
+  //   setStatusNameType(kita.status);
+  //   setUser(user);
+  //   navigate('/');
+  // };
+  const getRealUserData = () => {
     const user = USERS.find((u) => u.username === username);
     if (!user) return;
     const kita = KITOT.find((kita) => kita.kidsUserIds.includes(user.id) || kita.managementUserIds.includes(user.id));
@@ -28,6 +38,28 @@ export const Login = () => {
 
     setStatusNameType(kita.status);
     setUser(user);
+    navigate('/');
+  };
+
+  const addUser = () => {
+    const user = username;
+    if (!user) return;
+    if (user === 'teacher' || user === 'teacher1') {
+      getRealUserData();
+      return;
+    }
+    const randomInteger = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1)) + min;
+    const kita = KITOT[randomInteger(0, 1)];
+    if (!kita) return;
+
+    setStatusNameType(kita.status);
+    setUser({
+      firstName: '',
+      id: '',
+      lastName: '',
+      userType: 'STUDENT',
+      username,
+    });
     navigate('/');
   };
 
@@ -50,6 +82,7 @@ export const Login = () => {
             placeholder="Password / סיסמא"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            disabled
           />
         </S.Inputs>
         <Button isWhite onClick={addUser}>

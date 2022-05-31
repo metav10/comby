@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
 export const ThankYou = styled.div<{ background: string; isLightTextColor?: boolean }>`
   background: ${({ background }) => background};
@@ -21,7 +21,14 @@ export const Emotion = styled.div`
   text-align: center;
 `;
 
-export const ForSharing = styled.div`
+export const ForSharing = styled.div<{ isColors: boolean }>`
+  ${({ isColors }) =>
+    isColors &&
+    css`
+      background: white;
+      color: black;
+      padding: 20px;
+    `}
   font-weight: 500;
   position: absolute;
   bottom: 40px;
@@ -41,7 +48,15 @@ export const ForSharingHe = styled.span`
   direction: rtl;
 `;
 
-export const Feeling = styled.div`
+export const Feeling = styled.div<{ isColors: boolean }>`
+  ${({ isColors }) =>
+    isColors &&
+    css`
+      background: white;
+      color: black;
+      padding: 20px;
+    `}
+  padding: 20px;
   font-weight: 500;
   position: absolute;
   top: 40px;

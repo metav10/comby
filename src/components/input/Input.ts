@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
 
 export const Input = styled.input<{ icon?: string }>`
   display: flex;
@@ -13,4 +13,10 @@ export const Input = styled.input<{ icon?: string }>`
   &:focus {
     outline: none;
   }
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.5;
+    `}
 `;
